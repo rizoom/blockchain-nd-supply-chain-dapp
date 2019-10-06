@@ -1,10 +1,10 @@
 {
-  "name": "supply-chain-E",
+  "name": "supply-chain",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "lite-server",
+    "dev": "npx lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
