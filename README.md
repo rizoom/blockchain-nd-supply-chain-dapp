@@ -2,6 +2,8 @@
 
 ## Getting Started
 Run `npm install` then `npm run dev` at the root of the project if you want to run the dapp locally.
+- truffle version: 4.1.6
+- node version: 8.9.4
 
 ### UML Diagrams
 #### Activity
