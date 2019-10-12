@@ -8,9 +8,6 @@ import "../coffeeaccesscontrol/ConsumerRole.sol";
 
 // Define a contract 'Supplychain'
 contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, ConsumerRole {
-    // Define a variable called 'upc' for Universal Product Code (UPC)
-    uint  upc;
-
     // Define a variable called 'sku' for Stock Keeping Unit (SKU)
     uint  sku;
 
@@ -132,10 +129,9 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
     // Initialize sku and upc
     constructor() public payable {
         sku = 1;
-        upc = 1;
     }
 
-    function _computeProductId(uint _sku, uint _upc) internal view returns (uint) {
+    function _computeProductId(uint _sku, uint _upc) internal pure returns (uint) {
         return uint(keccak256(abi.encodePacked(_sku, _upc)));
     }
 
@@ -288,7 +284,7 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
     function purchaseItem(uint _upc) public
     onlyConsumer
         // Call modifier to check if upc has passed previous supply chain stage
-    received(upc)
+    received(_upc)
         // Access Control List enforced by calling Smart Contract / DApp
     {
         // Update the appropriate fields - ownerID, consumerID, itemState
