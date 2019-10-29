@@ -373,4 +373,23 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
         consumerID
         );
     }
+
+    /**
+    * Override addXXX methods so that only owner can add farmer, distributor etc...
+    */
+    function addFarmer(address account) public onlyOwner {
+        _addFarmer(account);
+    }
+
+    function addDistributor(address account) public onlyOwner {
+        _addDistributor(account);
+    }
+
+    function addRetailer(address account) public onlyOwner {
+        _addRetailer(account);
+    }
+
+    function addConsumer(address account) public onlyOwner {
+        _addConsumer(account);
+    }
 }

@@ -13,7 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "2.4.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "truffle": "4.1.16",
+    "solc": "^0.4.24"
   },
   "dependencies": {
     "truffle-hdwallet-provider": "^1.0.17"
